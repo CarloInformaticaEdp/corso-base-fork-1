@@ -1,7 +1,6 @@
 <h1>im a post man, lissen up</h1>
 <div *ngIf="postList">
-  <p *ngFor="let post of postList">
-    {{ post.title | uppercase }} <br />
-    {{ post.body }}
-  </p>
+  <div *ngFor="let elem of postList">
+    <post-row [post]="elem"> </post-row>
+  </div>
 </div>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'; // importiamo il tipo Routes (nativo angular) per soddisfare le proprietà richieste dal router
+import { PostEditComponent } from './post-edit/post-edit.component';
 import { PostComponent } from './post/post.component';
 
 const ROUTES: Routes = [
@@ -7,6 +8,10 @@ const ROUTES: Routes = [
     path: 'post-list',
     component: PostComponent,
     data: { showHeader: false, onlyMyPost: false }, // se volessimo passare dei dati al passaggio di route, potremmo inserirli qui [showHeader esempio nostro, non angular-based] per passarli al componente
+  },
+  {
+    path: 'post-edit/:id',
+    component: PostEditComponent,
   },
 ];
 

@@ -19,6 +19,18 @@ export class PostService {
     ] as Post[];
   }
 
+  public getPostWithId(id: number): Promise<Post | undefined> {
+    return new Promise<Post | undefined>((resolve, reject) => {
+      this.httpClient
+        .get<Post | undefined>(this.POST_LINK + '/' + id) // posso stabilire il tipo di ritorno
+        .pipe(first())
+        .subscribe({
+          next: (posts) => resolve(posts),
+          error: () => resolve(undefined),
+        });
+    });
+  }
+
   public getPostFromRemoteService(): Promise<Post[]> {
     return new Promise<Post[]>((resolve, reject) => {
       this.httpClient
