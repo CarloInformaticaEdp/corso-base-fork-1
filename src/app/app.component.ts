@@ -7,4 +7,6 @@ import { Component, VERSION } from '@angular/core';
 export class AppComponent {
   public text = ' Time to learn Angular ' + VERSION.major;
   protected routeToGo: string = 'post-list';
+
+  constructor() {}
 }
