@@ -6,10 +6,12 @@ import 'zone.js'; // manderebbe in errore =>
 import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
 import { PostService } from './services/post.service';
+import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, PostComponent],
-  imports: [BrowserModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [PostService], //diverso da nostro approccio, noi usiamo provideIn: 'root'
   bootstrap: [AppComponent],
 })
