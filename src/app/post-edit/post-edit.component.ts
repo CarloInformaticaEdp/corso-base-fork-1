@@ -18,6 +18,7 @@ export class PostEditComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    // https://angular-training-guide.rangle.io/routing/routeparams#reading-route-parameters
     this.sub = this.route.params.subscribe((params: any) => {
       this.id = +params['id']; // (+) converts string 'id' to a number
       this.postService
